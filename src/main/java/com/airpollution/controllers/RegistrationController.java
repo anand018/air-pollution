@@ -28,7 +28,7 @@ public class RegistrationController {
 
     @GetMapping("/username/{username}")
     public boolean validateUserName(@PathVariable String username) {
-        return false;
+        return registrationService.validateUserName(username);
     }
 
     private User jsonToObject(String json) throws JsonProcessingException {
@@ -36,6 +36,4 @@ public class RegistrationController {
         User user = objectMapper.readValue(json, User.class);
         return user;
     }
-
-
 }

@@ -27,4 +27,13 @@ public class RegistrationServiceImpl implements RegistrationService {
         registrationEntity.setImageFile(multipartFile.getBytes());
         registrationRepo.save(registrationEntity);
     }
+
+    @Override
+    public Boolean validateUserName(String username) {
+        Integer count = registrationRepo.checkIfUserExists(username);
+        if (count == 0) {
+            return false;
+        }
+        return true;
+    }
 }

@@ -2,14 +2,12 @@ server:
   servlet:
     context-path: /airpollution/authorize
   port: 9091
-
 spring:
   servlet:
     multipart:
       enabled: true
       file-size-threshold: 1000KB
       max-file-size: 200000KB
-
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
